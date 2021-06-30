@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/core/css/menu_navegacion.css">
+    <link rel="stylesheet" href="static/core/css/style.css">
+    <title>MoviePlus</title>
+    <!--EJEMPLO DE COMO CARGAR UNA IMAGEN-->
+
+    <!--{% static 'core/img/paisaje.jpg'%}-->
+</head>
+<!--MENU DE NAVEGACION-->
+<body style="background-color: rgba(194, 192, 192, 0.637);">
+    <header>
+        <div class="menu" >
+          
+          <nav>
+              <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">GENEROS</a></li>
+                <li><a href="#">MARVEL</a></li>
+                <li><a href="#">SERIES</a></li>
+              </ul>
+          </nav>
+        </div>
+      </header>
+      <br><br>
+<h1 style="text-align: center; color: brown; font-size: 70px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">MoviePlus</h1>
+<!--CARRUSEL DE PELICULAS-->
+<br><br><br><br><br>
+<div class="slider">
+    <ul>
+        <li><img src="{% static 'core/img/black_widow.jpg'%}" alt=""></li>
+        <li><img src="{% static 'core/img/fast_furious.jpeg'%}" alt=""></li>
+        <li><img src="{% static 'core/img/el_conjuro.jpg'%}" alt=""></li>
+        <li><img src="{% static 'core/img/geminis.jpg'%}" alt=""></li>
+        <li><img src="{% static 'core/img/black_widow.jpg'%}" alt=""></li>
+        <li><img src="{% static 'core/img/fast_furious.jpeg'%}" alt=""></li>
+        <li><img src="{% static 'core/img/el_conjuro.jpg'%}" alt=""></li>
+        <li><img src="{% static 'core/img/geminis.jpg'%}" alt=""></li>
+    </ul>
+</div>
+<!--PELICULAS-->
+<div class="title-cards">
+    <h2 style="color: black;">PELICULAS ESTRENO</h2>
+</div>
+<div class="container-card">
+
+<div class="card">
+<figure>
+    <img src="{% static 'core/img/black_widow.jpg'%}">
+</figure>
+<div class="contenido-card">
+    <h3>Black Widow</h3>
+    <a href="#">VER</a>
+</div>
+
+</div>
+<div class="card">
+<figure>
+    <img src="{% static 'core/img/fast_furious.jpeg'%}">
+</figure>
+<div class="contenido-card">
+    <h3>FAST AND FURIUS</h3>
+    <a href="#">VER</a>
+</div>
+
+</div>
+<div class="card">
+<figure>
+    <img src="{% static 'core/img/el_conjuro.jpg'%}">
+</figure>
+<div class="contenido-card">
+    <h3>EL CONJURO 3</h3>
+    <a href="#">VER</a>
+</div>
+</div>
+</div>
+
+<!--TABLA DE LOS DATOS DE LAS PELICULAS-->
+<br><br><br><br><br>
+<div class="row" >
+    <table border="3">
+        <tr>
+            <td>Titulo</td>
+            <td>Protagonista</td>
+            <td>Sinopsis</td>
+            <td>Genero</td>
+        </tr>
+        {%for ve in datos%}
+            <tr>
+                <td>{{ve.titulo}}</td>
+                <td>{{ve.protagonista}}</td>
+                <td>{{ve.sinopsis}}</td>
+                <td>{{ve.genero}}</td>
+            </tr>
+        {%endfor%}
+    </table>
+</div>
+</body>
+</html>
